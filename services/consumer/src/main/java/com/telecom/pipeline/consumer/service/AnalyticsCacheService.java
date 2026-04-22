@@ -14,6 +14,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.Collection;
+
+import org.springframework.data.neo4j.core.Neo4jClient;
 
 @Service
 public class AnalyticsCacheService {
@@ -27,6 +30,9 @@ public class AnalyticsCacheService {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
+    @Autowired
+    private Neo4jClient neo4jClient;
+
     private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule());
 
     @Scheduled(fixedRate = 2000)
@@ -37,9 +43,9 @@ public class AnalyticsCacheService {
             Double revenue = cdrRepository.getTotalRevenue();
             List<Cdr> recentCdrs = cdrRepository.getRecentCdrs();
 
-            // 2. Fetch live patterns from Neo4j
-            List<Map<String, Object>> fraudRings = fraudDetectionRepository.findFraudRings();
-            List<Map<String, Object>> spammers = fraudDetectionRepository.findSpammers();
+            // 2. Fetch live patterns from Neo4j using raw client to avoid SDN mapping errors
+            Collection<Map<String, Object>> fraudRings = neo4jClient.query("MATCH (a:Subscriber)-[:CALLED]->(b:Subscriber)-[:CALLED]->(c:Subscriber)-[:CALLED]->(a:Subscriber) RETURN a.phoneNumber AS caller, b.phoneNumber AS intermediary1, c.phoneNumber AS intermediary2 LIMIT 20").fetch().all();
+            Collection<Map<String, Object>> spammers = neo4jClient.query("MATCH (a:Subscriber)-[:CALLED]->(b:Subscriber) WITH a, COUNT(DISTINCT b) as uniqueCallees WHERE uniqueCallees > 50 RETURN a.phoneNumber AS spammer, uniqueCallees as count LIMIT 20").fetch().all();
             
             // Format frauds into unified alert objects for the frontend
             List<Map<String, Object>> unifiedFrauds = new ArrayList<>();

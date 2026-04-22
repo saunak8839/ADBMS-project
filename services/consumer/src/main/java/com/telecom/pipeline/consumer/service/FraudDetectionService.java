@@ -5,10 +5,9 @@ import com.telecom.pipeline.consumer.model.SubscriberNode;
 import com.telecom.pipeline.consumer.repository.FraudDetectionRepository;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
+import org.springframework.data.neo4j.core.Neo4jClient;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -16,10 +15,11 @@ import java.util.Map;
 public class FraudDetectionService {
 
     private final FraudDetectionRepository fraudDetectionRepository;
-    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+    private final Neo4jClient neo4jClient;
 
-    public FraudDetectionService(FraudDetectionRepository fraudDetectionRepository) {
+    public FraudDetectionService(FraudDetectionRepository fraudDetectionRepository, Neo4jClient neo4jClient) {
         this.fraudDetectionRepository = fraudDetectionRepository;
+        this.neo4jClient = neo4jClient;
     }
 
     @KafkaListener(topics = "cdr_raw", groupId = "telecom-fraud-group")
@@ -45,13 +45,13 @@ public class FraudDetectionService {
     }
 
     private void runFraudDetectionAlgorithms() {
-        List<Map<String, Object>> spammers = fraudDetectionRepository.findSpammers();
+        Collection<Map<String, Object>> spammers = neo4jClient.query("MATCH (a:Subscriber)-[:CALLED]->(b:Subscriber) WITH a, COUNT(DISTINCT b) as uniqueCallees WHERE uniqueCallees > 50 RETURN a.phoneNumber AS spammer, uniqueCallees as count LIMIT 20").fetch().all();
         if (!spammers.isEmpty()) {
             System.out.println("🚨 FRAUD ALERT: High out-degree spammers detected 🚨");
             spammers.forEach(s -> System.out.println("   Spammer: " + s.get("spammer") + " with " + s.get("count") + " unique calls"));
         }
 
-        List<Map<String, Object>> rings = fraudDetectionRepository.findFraudRings();
+        Collection<Map<String, Object>> rings = neo4jClient.query("MATCH (a:Subscriber)-[:CALLED]->(b:Subscriber)-[:CALLED]->(c:Subscriber)-[:CALLED]->(a:Subscriber) RETURN a.phoneNumber AS caller, b.phoneNumber AS intermediary1, c.phoneNumber AS intermediary2 LIMIT 20").fetch().all();
         if (!rings.isEmpty()) {
             System.out.println("🚨 FRAUD ALERT: Fraud Ring (Ping-Loop) detected 🚨");
             rings.forEach(r -> System.out.println("   Loop: " + r.get("caller") + " -> " + r.get("intermediary1") + " -> " + r.get("intermediary2") + " -> " + r.get("caller")));
