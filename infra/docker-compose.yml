@@ -1,13 +1,17 @@
-# Orchestrates Kafka, Postgres, Neo4j, Redis
-
+# Orchestrates Kafka, Postgres, Neo4j, Redis - Optimized for Stability
 services:
   postgres:
     image: postgres:15-alpine
     container_name: telecom_postgres
+    deploy:
+      resources:
+        limits:
+          memory: 256M
     environment:
       POSTGRES_USER: telecom_user
       POSTGRES_PASSWORD: telecom_password
       POSTGRES_DB: telecom_db
+    command: ["postgres", "-c", "shared_buffers=64MB", "-c", "max_connections=50"]
     ports:
       - "5432:5432"
     volumes:
@@ -18,6 +22,10 @@ services:
   kafka:
     image: confluentinc/confluent-local:7.5.0
     container_name: telecom_kafka
+    deploy:
+      resources:
+        limits:
+          memory: 512M
     ports:
       - "9092:9092"
     environment:
@@ -32,11 +40,17 @@ services:
       KAFKA_LISTENERS: 'PLAINTEXT://kafka:29092,CONTROLLER://kafka:29093,PLAINTEXT_HOST://0.0.0.0:9092'
       KAFKA_CONTROLLER_LISTENER_NAMES: 'CONTROLLER'
       CLUSTER_ID: 'MkU3OEVBNTcwNTJENDM2Qk'
+      KAFKA_HEAP_OPTS: "-Xmx256M -Xms128M"
     networks:
       - telecom-network
+
   clickhouse:
     image: clickhouse/clickhouse-server:latest
     container_name: telecom_clickhouse
+    deploy:
+      resources:
+        limits:
+          memory: 1G
     ports:
       - "8123:8123"
       - "9000:9000"
@@ -48,6 +62,10 @@ services:
   neo4j:
     image: neo4j:5.18.0
     container_name: telecom_neo4j
+    deploy:
+      resources:
+        limits:
+          memory: 1G
     environment:
       NEO4J_AUTH: neo4j/telecom_password
       NEO4J_server_memory_heap_initial__size: 256m
@@ -65,7 +83,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 256M
+          memory: 128M
     ports:
       - "6379:6379"
     networks:

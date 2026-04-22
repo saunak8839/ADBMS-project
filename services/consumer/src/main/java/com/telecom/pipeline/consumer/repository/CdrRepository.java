@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import org.springframework.data.jpa.repository.Query;
 import java.util.List;
+import java.time.LocalDateTime;
+import org.springframework.data.repository.query.Param;
 
 @Repository
 public interface CdrRepository extends JpaRepository<Cdr, CdrCompositeKey> {
@@ -42,4 +44,7 @@ public interface CdrRepository extends JpaRepository<Cdr, CdrCompositeKey> {
 
     @Query(value = "SELECT * FROM cdrs ORDER BY start_time DESC LIMIT 20", nativeQuery = true)
     List<Cdr> getRecentCdrs();
+
+    @Query(value = "SELECT * FROM cdrs WHERE start_time > :lastSync ORDER BY start_time ASC LIMIT 2000", nativeQuery = true)
+    List<Cdr> getUnsyncedCdrs(@Param("lastSync") LocalDateTime lastSync);
 }
