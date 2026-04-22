@@ -1,7 +1,5 @@
 package com.telecom.pipeline.consumer.service;
 
-import com.telecom.pipeline.consumer.model.CallRelationship;
-import com.telecom.pipeline.consumer.model.SubscriberNode;
 import com.telecom.pipeline.consumer.repository.FraudDetectionRepository;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;

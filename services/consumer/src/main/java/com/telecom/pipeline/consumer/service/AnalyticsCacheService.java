@@ -33,7 +33,9 @@ public class AnalyticsCacheService {
     @Autowired
     private Neo4jClient neo4jClient;
 
-    private final ObjectMapper objectMapper = new ObjectMapper().registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule());
+    private final ObjectMapper objectMapper = new ObjectMapper()
+        .registerModule(new com.fasterxml.jackson.datatype.jsr310.JavaTimeModule())
+        .disable(com.fasterxml.jackson.databind.SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
     @Scheduled(fixedRate = 2000)
     public void cacheAnalytics() {

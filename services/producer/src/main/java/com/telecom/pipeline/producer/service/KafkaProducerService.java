@@ -19,8 +19,10 @@ public class KafkaProducerService {
     private final Random random = new Random();
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
 
-    // Predefined fraud ring nodes
-    private final Long[] RING = {8880000001L, 8880000002L, 8880000003L};
+    // Sophisticated Fraud Entities
+    private final Long[] SPAMMERS = { 9999999999L, 9991111111L, 9992222222L, 9993333333L, 9994444444L };
+    private final Long[] RING_POOL = { 8880000001L, 8880000002L, 8880000003L, 8880000004L, 8880000005L, 8880000006L,
+            8880000007L, 8880000008L, 8880000009L };
 
     public KafkaProducerService(KafkaTemplate<String, CdrEvent> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
@@ -30,19 +32,23 @@ public class KafkaProducerService {
     public void generateLiveTraffic() {
         int hour = LocalTime.now().getHour();
         int baseRate;
-        
+
         // Traffic curve
-        if (hour >= 0 && hour < 6) baseRate = 2; // Night
-        else if (hour >= 6 && hour < 10) baseRate = 25; // Morning Rush
-        else if (hour >= 10 && hour < 18) baseRate = 15; // Business
-        else baseRate = 30; // Evening Peak
+        if (hour >= 0 && hour < 6)
+            baseRate = 2; // Night
+        else if (hour >= 6 && hour < 10)
+            baseRate = 25; // Morning Rush
+        else if (hour >= 10 && hour < 18)
+            baseRate = 15; // Business
+        else
+            baseRate = 30; // Evening Peak
 
         int actualRate = baseRate;
         if (random.nextDouble() < 0.10) { // 10% chance of burst
             actualRate = baseRate * 5;
             System.out.println("BURST DETECTED! Generating " + actualRate + " calls.");
         }
-        
+
         generateAndSendBatch(actualRate);
     }
 
@@ -65,15 +71,19 @@ public class KafkaProducerService {
     }
 
     private CdrEvent generateSpammerCdr() {
-        Long spammer = 9999999999L; // Fixed spammer number
+        Long spammer = SPAMMERS[random.nextInt(SPAMMERS.length)];
         Long callee = 9000000000L + random.nextInt(999999999);
         return buildEvent(spammer, callee);
     }
 
     private CdrEvent generateRingCdr() {
-        int index = random.nextInt(3);
-        Long caller = RING[index];
-        Long callee = RING[(index + 1) % 3]; // A->B, B->C, C->A
+        // Pick a base index in the pool and create a triplet cycle
+        int startIdx = random.nextInt(RING_POOL.length);
+        int offset = 1 + random.nextInt(2); // Randomize step in pool
+
+        Long caller = RING_POOL[startIdx];
+        Long callee = RING_POOL[(startIdx + offset) % RING_POOL.length];
+
         return buildEvent(caller, callee);
     }
 
@@ -86,12 +96,12 @@ public class KafkaProducerService {
     private CdrEvent buildEvent(Long caller, Long callee) {
         LocalDateTime startTime = LocalDateTime.now().minusSeconds(random.nextInt(60));
         return new CdrEvent(
-            UUID.randomUUID(),
-            caller,
-            callee,
-            startTime.format(FORMATTER),
-            10 + random.nextInt(3600), // duration
-            1 + random.nextInt(100)    // cell_id
+                UUID.randomUUID(),
+                caller,
+                callee,
+                startTime.format(FORMATTER),
+                10 + random.nextInt(3600), // duration
+                1 + random.nextInt(100) // cell_id
         );
     }
 }
