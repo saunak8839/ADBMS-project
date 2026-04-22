@@ -19,10 +19,9 @@ public class KafkaProducerService {
     private final Random random = new Random();
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
 
-    // Sophisticated Fraud Entities
-    private final Long[] SPAMMERS = { 9999999999L, 9991111111L, 9992222222L, 9993333333L, 9994444444L };
-    private final Long[] RING_POOL = { 8880000001L, 8880000002L, 8880000003L, 8880000004L, 8880000005L, 8880000006L,
-            8880000007L, 8880000008L, 8880000009L };
+    // No fixed pools anymore - using purely probabilistic logic
+    private final int SUBSCRIBER_POOL_SIZE = 10000;
+    private final long BASE_NUM = 9000000000L;
 
     public KafkaProducerService(KafkaTemplate<String, CdrEvent> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
@@ -71,25 +70,28 @@ public class KafkaProducerService {
     }
 
     private CdrEvent generateSpammerCdr() {
-        Long spammer = SPAMMERS[random.nextInt(SPAMMERS.length)];
-        Long callee = 9000000000L + random.nextInt(999999999);
+        // High propensity caller - picks from the top 50 most active nodes
+        Long spammer = BASE_NUM + random.nextInt(50);
+        Long callee = BASE_NUM + random.nextInt(SUBSCRIBER_POOL_SIZE);
         return buildEvent(spammer, callee);
     }
 
     private CdrEvent generateRingCdr() {
-        // Pick a base index in the pool and create a triplet cycle
-        int startIdx = random.nextInt(RING_POOL.length);
-        int offset = 1 + random.nextInt(2); // Randomize step in pool
-
-        Long caller = RING_POOL[startIdx];
-        Long callee = RING_POOL[(startIdx + offset) % RING_POOL.length];
-
+        // Probabilistic loop closing: picks from a small "cell" of 200 nodes
+        // This naturally forms cycles (1->2->3->1) over time
+        int cellId = random.nextInt(50); // 50 different potential fraud cells
+        int startRange = cellId * 5; 
+        
+        Long caller = BASE_NUM + 5000 + startRange + random.nextInt(3);
+        Long callee = BASE_NUM + 5000 + startRange + ((random.nextInt(3) + 1) % 3);
+        
         return buildEvent(caller, callee);
     }
 
     private CdrEvent generateRandomCdr() {
-        Long caller = 9000000000L + random.nextInt(999999999);
-        Long callee = 9000000000L + random.nextInt(999999999);
+        Long caller = BASE_NUM + random.nextInt(SUBSCRIBER_POOL_SIZE);
+        Long callee = BASE_NUM + random.nextInt(SUBSCRIBER_POOL_SIZE);
+        while(caller.equals(callee)) callee = BASE_NUM + random.nextInt(SUBSCRIBER_POOL_SIZE);
         return buildEvent(caller, callee);
     }
 

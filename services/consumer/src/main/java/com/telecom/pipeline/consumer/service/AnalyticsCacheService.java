@@ -46,8 +46,8 @@ public class AnalyticsCacheService {
             List<Cdr> recentCdrs = cdrRepository.getRecentCdrs();
 
             // 2. Fetch live patterns from Neo4j using raw client to avoid SDN mapping errors
-            Collection<Map<String, Object>> fraudRings = neo4jClient.query("MATCH (a:Subscriber)-[:CALLED]->(b:Subscriber)-[:CALLED]->(c:Subscriber)-[:CALLED]->(a:Subscriber) RETURN a.phoneNumber AS caller, b.phoneNumber AS intermediary1, c.phoneNumber AS intermediary2 LIMIT 20").fetch().all();
-            Collection<Map<String, Object>> spammers = neo4jClient.query("MATCH (a:Subscriber)-[:CALLED]->(b:Subscriber) WITH a, COUNT(DISTINCT b) as uniqueCallees WHERE uniqueCallees > 50 RETURN a.phoneNumber AS spammer, uniqueCallees as count LIMIT 20").fetch().all();
+            Collection<Map<String, Object>> fraudRings = neo4jClient.query("MATCH (a:Subscriber)-[:CALLED]->(b:Subscriber)-[:CALLED]->(c:Subscriber)-[:CALLED]->(a:Subscriber) RETURN a.phoneNumber AS caller, b.phoneNumber AS intermediary1, c.phoneNumber AS intermediary2 LIMIT 50").fetch().all();
+            Collection<Map<String, Object>> spammers = neo4jClient.query("MATCH (a:Subscriber)-[:CALLED]->(b:Subscriber) WITH a, COUNT(DISTINCT b) as uniqueCallees WHERE uniqueCallees > 50 RETURN a.phoneNumber AS spammer, uniqueCallees as count LIMIT 50").fetch().all();
             
             // Format frauds into unified alert objects for the frontend
             List<Map<String, Object>> unifiedFrauds = new ArrayList<>();
