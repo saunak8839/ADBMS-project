@@ -1,4 +1,5 @@
 com/telecom/pipeline/consumer/controller/DashboardController.class
+com/telecom/pipeline/consumer/controller/OlapController.class
 com/telecom/pipeline/consumer/model/CdrCompositeKey.class
 com/telecom/pipeline/consumer/repository/CdrRepository$RevenueByCircleProjection.class
 com/telecom/pipeline/consumer/ConsumerApplication.class

@@ -56,6 +56,10 @@ services:
       - "9000:9000"
     volumes:
       - ./clickhouse:/docker-entrypoint-initdb.d
+    environment:
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: telecom_password
+      CLICKHOUSE_DB: dwh
     networks:
       - telecom-network
 

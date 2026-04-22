@@ -1,0 +1,12 @@
+<clickhouse>
+    <!-- Server-level memory cap: 800MB out of the 1GB Docker limit -->
+    <max_server_memory_usage>858993459</max_server_memory_usage>
+
+    <!-- Caches -->
+    <mark_cache_size>67108864</mark_cache_size>
+    <uncompressed_cache_size>67108864</uncompressed_cache_size>
+
+    <!-- Background merge/mutation thread pools -->
+    <background_pool_size>2</background_pool_size>
+    <background_move_pool_size>1</background_move_pool_size>
+</clickhouse>

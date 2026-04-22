@@ -6,5 +6,7 @@
 /Users/hateful/ADBMS-project/services/consumer/src/main/java/com/telecom/pipeline/consumer/model/Cdr.java
 /Users/hateful/ADBMS-project/services/consumer/src/main/java/com/telecom/pipeline/consumer/repository/CdrRepository.java
 /Users/hateful/ADBMS-project/services/consumer/src/main/java/com/telecom/pipeline/consumer/controller/DashboardController.java
+/Users/hateful/ADBMS-project/services/consumer/src/main/java/com/telecom/pipeline/consumer/service/ClickHouseHttpService.java
+/Users/hateful/ADBMS-project/services/consumer/src/main/java/com/telecom/pipeline/consumer/controller/OlapController.java
 /Users/hateful/ADBMS-project/services/consumer/src/main/java/com/telecom/pipeline/consumer/service/KafkaConsumerService.java
 /Users/hateful/ADBMS-project/services/consumer/src/main/java/com/telecom/pipeline/consumer/service/FraudDetectionService.java
