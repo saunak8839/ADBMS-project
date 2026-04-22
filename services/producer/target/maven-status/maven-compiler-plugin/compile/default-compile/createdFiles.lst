@@ -1,0 +1,4 @@
+com/telecom/pipeline/producer/model/CdrEvent.class
+com/telecom/pipeline/producer/service/KafkaProducerService.class
+com/telecom/pipeline/producer/ProducerApplication.class
+com/telecom/pipeline/producer/controller/SimulatorController.class

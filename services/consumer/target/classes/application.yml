@@ -1,0 +1,45 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    web-application-type: servlet
+  application:
+    name: telecom-consumer
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    url: jdbc:postgresql://localhost:5432/telecom_db
+    username: telecom_user
+    password: telecom_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none # We already defined the schema via init.sql
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 50
+        order_inserts: true
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
+      password: telecom_password
+  kafka:
+    bootstrap-servers: localhost:9092
+    listener:
+      type: batch
+    consumer:
+      group-id: telecom-consumer-group
+      auto-offset-reset: earliest
+      max-poll-records: 50
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: false
+        spring.json.value.default.type: java.util.Map

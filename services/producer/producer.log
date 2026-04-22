@@ -1,0 +1,178 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/opt/homebrew/Cellar/maven/3.9.11/libexec/lib/guice-5.1.0-classes.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.telecom.pipeline:producer >--------------------
+[INFO] Building producer 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.4:run (default-cli) > test-compile @ producer >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ producer ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ producer ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ producer ---
+[INFO] skip non existing resourceDirectory /Users/hateful/ADBMS-project/services/producer/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ producer ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:3.2.4:run (default-cli) < test-compile @ producer <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.4:run (default-cli) @ producer ---
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-buildpack-platform/3.2.4/spring-boot-buildpack-platform-3.2.4.pom
+Progress (1): 970 BProgress (1): 2.7 kBProgress (1): 3.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-buildpack-platform/3.2.4/spring-boot-buildpack-platform-3.2.4.pom (3.2 kB at 6.6 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.2.3/httpclient5-5.2.3.pom
+Progress (1): 869 BProgress (1): 2.0 kBProgress (1): 4.7 kBProgress (1): 6.0 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.2.3/httpclient5-5.2.3.pom (6.0 kB at 50 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5-parent/5.2.3/httpclient5-parent-5.2.3.pom
+Progress (1): 837 BProgress (1): 1.9 kBProgress (1): 3.5 kBProgress (1): 8.2 kBProgress (1): 9.7 kBProgress (1): 13 kB Progress (1): 17 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5-parent/5.2.3/httpclient5-parent-5.2.3.pom (17 kB at 141 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.2.4/httpcore5-5.2.4.pom
+Progress (1): 883 BProgress (1): 2.0 kBProgress (1): 3.9 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.2.4/httpcore5-5.2.4.pom (3.9 kB at 34 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-parent/5.2.4/httpcore5-parent-5.2.4.pom
+Progress (1): 847 BProgress (1): 1.9 kBProgress (1): 3.6 kBProgress (1): 6.7 kBProgress (1): 8.4 kBProgress (1): 11 kB Progress (1): 14 kB                   Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-parent/5.2.4/httpcore5-parent-5.2.4.pom (14 kB at 116 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.2.4/httpcore5-h2-5.2.4.pom
+Progress (1): 889 BProgress (1): 2.1 kBProgress (1): 3.6 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.2.4/httpcore5-h2-5.2.4.pom (3.6 kB at 30 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/3.2.4/spring-boot-loader-tools-3.2.4.pom
+Progress (1): 1.0 kBProgress (1): 2.2 kB                    Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/3.2.4/spring-boot-loader-tools-3.2.4.pom (2.2 kB at 19 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-buildpack-platform/3.2.4/spring-boot-buildpack-platform-3.2.4.jar
+Progress (1): 0.9/272 kBProgress (1): 2.3/272 kBProgress (1): 3.6/272 kBProgress (1): 5.0/272 kBProgress (1): 6.4/272 kBProgress (1): 7.7/272 kBProgress (1): 9.1/272 kBProgress (1): 10/272 kB Progress (1): 12/272 kBProgress (1): 13/272 kBProgress (1): 15/272 kBProgress (1): 16/272 kBProgress (1): 17/272 kBProgress (1): 18/272 kBProgress (1): 20/272 kBProgress (1): 21/272 kBProgress (1): 23/272 kBProgress (1): 24/272 kBProgress (1): 25/272 kBProgress (1): 29/272 kBProgress (1): 34/272 kBProgress (1): 38/272 kBProgress (1): 42/272 kBProgress (1): 46/272 kBProgress (1): 51/272 kBProgress (1): 55/272 kBProgress (1): 59/272 kBProgress (1): 63/272 kBProgress (1): 68/272 kBProgress (1): 72/272 kBProgress (1): 76/272 kBProgress (1): 80/272 kBProgress (1): 84/272 kBProgress (1): 89/272 kBProgress (1): 93/272 kBProgress (1): 97/272 kBProgress (1): 101/272 kBProgress (1): 106/272 kBProgress (1): 110/272 kBProgress (1): 114/272 kBProgress (1): 118/272 kBProgress (1): 123/272 kBProgress (1): 127/272 kBProgress (1): 131/272 kBProgress (1): 135/272 kBProgress (1): 139/272 kBProgress (1): 144/272 kBProgress (1): 147/272 kBProgress (1): 151/272 kBProgress (1): 155/272 kBProgress (1): 159/272 kBProgress (1): 164/272 kBProgress (1): 168/272 kBProgress (1): 172/272 kBProgress (1): 176/272 kBProgress (1): 181/272 kBProgress (1): 185/272 kBProgress (1): 189/272 kBProgress (1): 193/272 kBProgress (1): 210/272 kBProgress (1): 226/272 kBProgress (1): 242/272 kBProgress (1): 259/272 kBProgress (1): 272 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-buildpack-platform/3.2.4/spring-boot-buildpack-platform-3.2.4.jar (272 kB at 789 kB/s)
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.2.3/httpclient5-5.2.3.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.2.4/httpcore5-5.2.4.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.2.4/httpcore5-h2-5.2.4.jar
+Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/3.2.4/spring-boot-loader-tools-3.2.4.jar
+Progress (1): 7.7/855 kBProgress (1): 16/855 kB Progress (1): 32/855 kBProgress (1): 48/855 kBProgress (1): 65/855 kBProgress (1): 81/855 kBProgress (1): 98/855 kBProgress (1): 114/855 kBProgress (1): 130/855 kBProgress (1): 147/855 kBProgress (1): 163/855 kBProgress (1): 179/855 kBProgress (1): 196/855 kBProgress (1): 212/855 kBProgress (1): 229/855 kBProgress (1): 245/855 kBProgress (1): 261/855 kBProgress (1): 278/855 kBProgress (1): 294/855 kBProgress (1): 311/855 kBProgress (1): 327/855 kBProgress (1): 343/855 kBProgress (1): 360/855 kBProgress (1): 376/855 kBProgress (1): 392/855 kBProgress (1): 409/855 kBProgress (1): 425/855 kBProgress (1): 442/855 kBProgress (1): 458/855 kBProgress (1): 474/855 kBProgress (1): 491/855 kBProgress (1): 507/855 kBProgress (1): 524/855 kBProgress (1): 540/855 kBProgress (1): 556/855 kBProgress (1): 573/855 kBProgress (1): 589/855 kBProgress (1): 605/855 kBProgress (1): 622/855 kBProgress (1): 638/855 kBProgress (2): 638/855 kB | 0.9/434 kBProgress (2): 638/855 kB | 2.3/434 kBProgress (2): 638/855 kB | 3.6/434 kBProgress (2): 638/855 kB | 5.0/434 kBProgress (2): 638/855 kB | 6.4/434 kBProgress (2): 638/855 kB | 7.7/434 kBProgress (2): 638/855 kB | 8.2/434 kBProgress (2): 638/855 kB | 9.6/434 kBProgress (2): 638/855 kB | 11/434 kB Progress (2): 638/855 kB | 12/434 kBProgress (2): 638/855 kB | 14/434 kBProgress (2): 638/855 kB | 15/434 kBProgress (2): 638/855 kB | 16/434 kBProgress (2): 638/855 kB | 18/434 kBProgress (2): 655/855 kB | 18/434 kBProgress (2): 655/855 kB | 19/434 kBProgress (2): 655/855 kB | 21/434 kBProgress (2): 655/855 kB | 22/434 kBProgress (2): 655/855 kB | 23/434 kBProgress (2): 655/855 kB | 25/434 kBProgress (2): 655/855 kB | 26/434 kBProgress (2): 655/855 kB | 27/434 kBProgress (2): 655/855 kB | 29/434 kBProgress (2): 671/855 kB | 29/434 kBProgress (2): 687/855 kB | 29/434 kBProgress (2): 704/855 kB | 29/434 kBProgress (2): 720/855 kB | 29/434 kBProgress (2): 737/855 kB | 29/434 kBProgress (2): 753/855 kB | 29/434 kBProgress (2): 769/855 kB | 29/434 kBProgress (2): 786/855 kB | 29/434 kBProgress (2): 802/855 kB | 29/434 kBProgress (2): 818/855 kB | 29/434 kBProgress (2): 835/855 kB | 29/434 kBProgress (2): 851/855 kB | 29/434 kBProgress (2): 855 kB | 29/434 kB                                    Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.2.4/httpcore5-5.2.4.jar (855 kB at 2.6 MB/s)
+Progress (2): 29/434 kB | 0.9/237 kBProgress (2): 29/434 kB | 2.3/237 kBProgress (2): 29/434 kB | 3.6/237 kBProgress (2): 29/434 kB | 5.0/237 kBProgress (2): 29/434 kB | 6.4/237 kBProgress (2): 29/434 kB | 7.7/237 kBProgress (2): 29/434 kB | 9.1/237 kBProgress (2): 29/434 kB | 10/237 kB Progress (2): 29/434 kB | 12/237 kBProgress (3): 29/434 kB | 12/237 kB | 0.9/843 kBProgress (3): 29/434 kB | 12/237 kB | 2.3/843 kBProgress (3): 29/434 kB | 12/237 kB | 3.6/843 kBProgress (3): 29/434 kB | 12/237 kB | 5.0/843 kBProgress (3): 29/434 kB | 12/237 kB | 6.4/843 kBProgress (3): 29/434 kB | 12/237 kB | 7.7/843 kBProgress (3): 29/434 kB | 12/237 kB | 9.1/843 kBProgress (3): 29/434 kB | 12/237 kB | 10/843 kB Progress (3): 29/434 kB | 12/237 kB | 12/843 kBProgress (3): 29/434 kB | 13/237 kB | 12/843 kBProgress (3): 29/434 kB | 13/237 kB | 13/843 kBProgress (3): 29/434 kB | 15/237 kB | 13/843 kBProgress (3): 29/434 kB | 15/237 kB | 15/843 kBProgress (3): 29/434 kB | 16/237 kB | 15/843 kBProgress (3): 29/434 kB | 16/237 kB | 16/843 kBProgress (3): 29/434 kB | 17/237 kB | 16/843 kBProgress (3): 29/434 kB | 17/237 kB | 17/843 kBProgress (3): 29/434 kB | 19/237 kB | 17/843 kBProgress (3): 29/434 kB | 19/237 kB | 19/843 kBProgress (3): 29/434 kB | 20/237 kB | 19/843 kBProgress (3): 29/434 kB | 20/237 kB | 20/843 kBProgress (3): 29/434 kB | 21/237 kB | 20/843 kBProgress (3): 29/434 kB | 23/237 kB | 20/843 kBProgress (3): 29/434 kB | 24/237 kB | 20/843 kBProgress (3): 29/434 kB | 24/237 kB | 21/843 kBProgress (3): 29/434 kB | 26/237 kB | 21/843 kBProgress (3): 29/434 kB | 26/237 kB | 23/843 kBProgress (3): 29/434 kB | 27/237 kB | 23/843 kBProgress (3): 29/434 kB | 27/237 kB | 24/843 kBProgress (3): 29/434 kB | 28/237 kB | 24/843 kBProgress (3): 29/434 kB | 28/237 kB | 26/843 kBProgress (3): 29/434 kB | 30/237 kB | 26/843 kBProgress (3): 29/434 kB | 31/237 kB | 26/843 kBProgress (3): 29/434 kB | 31/237 kB | 27/843 kBProgress (3): 29/434 kB | 32/237 kB | 27/843 kBProgress (3): 29/434 kB | 32/237 kB | 28/843 kBProgress (3): 30/434 kB | 32/237 kB | 28/843 kBProgress (3): 31/434 kB | 32/237 kB | 28/843 kBProgress (3): 33/434 kB | 32/237 kB | 28/843 kBProgress (3): 34/434 kB | 32/237 kB | 28/843 kBProgress (3): 36/434 kB | 32/237 kB | 28/843 kBProgress (3): 37/434 kB | 32/237 kB | 28/843 kBProgress (3): 38/434 kB | 32/237 kB | 28/843 kBProgress (3): 40/434 kB | 32/237 kB | 28/843 kBProgress (3): 41/434 kB | 32/237 kB | 28/843 kBProgress (3): 42/434 kB | 32/237 kB | 28/843 kBProgress (3): 44/434 kB | 32/237 kB | 28/843 kBProgress (3): 45/434 kB | 32/237 kB | 28/843 kBProgress (3): 47/434 kB | 32/237 kB | 28/843 kBProgress (3): 48/434 kB | 32/237 kB | 28/843 kBProgress (3): 49/434 kB | 32/237 kB | 28/843 kBProgress (3): 51/434 kB | 32/237 kB | 28/843 kBProgress (3): 52/434 kB | 32/237 kB | 28/843 kBProgress (3): 53/434 kB | 32/237 kB | 28/843 kBProgress (3): 55/434 kB | 32/237 kB | 28/843 kBProgress (3): 59/434 kB | 32/237 kB | 28/843 kBProgress (3): 63/434 kB | 32/237 kB | 28/843 kBProgress (3): 67/434 kB | 32/237 kB | 28/843 kBProgress (3): 72/434 kB | 32/237 kB | 28/843 kBProgress (3): 76/434 kB | 32/237 kB | 28/843 kBProgress (3): 80/434 kB | 32/237 kB | 28/843 kBProgress (3): 84/434 kB | 32/237 kB | 28/843 kBProgress (3): 89/434 kB | 32/237 kB | 28/843 kBProgress (3): 93/434 kB | 32/237 kB | 28/843 kBProgress (3): 97/434 kB | 32/237 kB | 28/843 kBProgress (3): 98/434 kB | 32/237 kB | 28/843 kBProgress (3): 103/434 kB | 32/237 kB | 28/843 kBProgress (3): 107/434 kB | 32/237 kB | 28/843 kBProgress (3): 111/434 kB | 32/237 kB | 28/843 kBProgress (3): 115/434 kB | 32/237 kB | 28/843 kBProgress (3): 115/434 kB | 34/237 kB | 28/843 kBProgress (3): 115/434 kB | 35/237 kB | 28/843 kBProgress (3): 115/434 kB | 36/237 kB | 28/843 kBProgress (3): 115/434 kB | 38/237 kB | 28/843 kBProgress (3): 115/434 kB | 39/237 kB | 28/843 kBProgress (3): 115/434 kB | 41/237 kB | 28/843 kBProgress (3): 115/434 kB | 42/237 kB | 28/843 kBProgress (3): 115/434 kB | 43/237 kB | 28/843 kBProgress (3): 115/434 kB | 45/237 kB | 28/843 kBProgress (3): 115/434 kB | 45/237 kB | 30/843 kBProgress (3): 115/434 kB | 45/237 kB | 31/843 kBProgress (3): 115/434 kB | 45/237 kB | 32/843 kBProgress (3): 115/434 kB | 46/237 kB | 32/843 kBProgress (3): 115/434 kB | 46/237 kB | 33/843 kBProgress (3): 115/434 kB | 47/237 kB | 33/843 kBProgress (3): 115/434 kB | 47/237 kB | 35/843 kBProgress (3): 115/434 kB | 47/237 kB | 36/843 kBProgress (3): 115/434 kB | 47/237 kB | 38/843 kBProgress (3): 115/434 kB | 49/237 kB | 38/843 kBProgress (3): 115/434 kB | 49/237 kB | 39/843 kBProgress (3): 115/434 kB | 49/237 kB | 40/843 kBProgress (3): 115/434 kB | 50/237 kB | 40/843 kBProgress (3): 115/434 kB | 52/237 kB | 40/843 kBProgress (3): 115/434 kB | 53/237 kB | 40/843 kBProgress (3): 115/434 kB | 53/237 kB | 42/843 kBProgress (3): 115/434 kB | 53/237 kB | 43/843 kBProgress (3): 115/434 kB | 54/237 kB | 43/843 kBProgress (3): 115/434 kB | 56/237 kB | 43/843 kBProgress (3): 115/434 kB | 56/237 kB | 44/843 kBProgress (3): 115/434 kB | 56/237 kB | 46/843 kBProgress (3): 115/434 kB | 56/237 kB | 47/843 kBProgress (3): 115/434 kB | 60/237 kB | 47/843 kBProgress (3): 115/434 kB | 60/237 kB | 48/843 kBProgress (3): 115/434 kB | 60/237 kB | 50/843 kBProgress (3): 115/434 kB | 64/237 kB | 50/843 kBProgress (3): 115/434 kB | 64/237 kB | 51/843 kBProgress (3): 115/434 kB | 64/237 kB | 53/843 kBProgress (3): 115/434 kB | 64/237 kB | 54/843 kBProgress (3): 115/434 kB | 68/237 kB | 54/843 kBProgress (3): 115/434 kB | 68/237 kB | 55/843 kBProgress (3): 119/434 kB | 68/237 kB | 55/843 kBProgress (3): 124/434 kB | 68/237 kB | 55/843 kBProgress (3): 124/434 kB | 68/237 kB | 60/843 kBProgress (3): 124/434 kB | 73/237 kB | 60/843 kBProgress (3): 128/434 kB | 73/237 kB | 60/843 kBProgress (3): 128/434 kB | 77/237 kB | 60/843 kBProgress (3): 128/434 kB | 77/237 kB | 64/843 kBProgress (3): 132/434 kB | 77/237 kB | 64/843 kBProgress (3): 132/434 kB | 81/237 kB | 64/843 kBProgress (3): 132/434 kB | 81/237 kB | 68/843 kBProgress (3): 132/434 kB | 85/237 kB | 68/843 kBProgress (3): 132/434 kB | 85/237 kB | 72/843 kBProgress (3): 136/434 kB | 85/237 kB | 72/843 kBProgress (3): 136/434 kB | 85/237 kB | 76/843 kBProgress (3): 136/434 kB | 89/237 kB | 76/843 kBProgress (3): 141/434 kB | 89/237 kB | 76/843 kBProgress (3): 145/434 kB | 89/237 kB | 76/843 kBProgress (3): 145/434 kB | 94/237 kB | 76/843 kBProgress (3): 145/434 kB | 94/237 kB | 81/843 kBProgress (3): 149/434 kB | 94/237 kB | 81/843 kBProgress (3): 149/434 kB | 98/237 kB | 81/843 kBProgress (3): 149/434 kB | 98/237 kB | 85/843 kBProgress (3): 149/434 kB | 98/237 kB | 89/843 kBProgress (3): 149/434 kB | 102/237 kB | 89/843 kBProgress (3): 153/434 kB | 102/237 kB | 89/843 kBProgress (3): 158/434 kB | 102/237 kB | 89/843 kBProgress (3): 162/434 kB | 102/237 kB | 89/843 kBProgress (3): 162/434 kB | 102/237 kB | 93/843 kBProgress (3): 162/434 kB | 106/237 kB | 93/843 kBProgress (3): 166/434 kB | 106/237 kB | 93/843 kBProgress (3): 166/434 kB | 111/237 kB | 93/843 kBProgress (3): 166/434 kB | 111/237 kB | 98/843 kBProgress (3): 170/434 kB | 111/237 kB | 98/843 kBProgress (3): 170/434 kB | 115/237 kB | 98/843 kBProgress (3): 170/434 kB | 115/237 kB | 102/843 kBProgress (3): 174/434 kB | 115/237 kB | 102/843 kBProgress (3): 179/434 kB | 115/237 kB | 102/843 kBProgress (3): 179/434 kB | 119/237 kB | 102/843 kBProgress (3): 179/434 kB | 119/237 kB | 106/843 kBProgress (3): 183/434 kB | 119/237 kB | 106/843 kBProgress (3): 183/434 kB | 119/237 kB | 110/843 kBProgress (3): 187/434 kB | 119/237 kB | 110/843 kBProgress (3): 187/434 kB | 119/237 kB | 115/843 kBProgress (3): 191/434 kB | 119/237 kB | 115/843 kBProgress (3): 196/434 kB | 119/237 kB | 115/843 kBProgress (3): 200/434 kB | 119/237 kB | 115/843 kBProgress (3): 204/434 kB | 119/237 kB | 115/843 kBProgress (3): 208/434 kB | 119/237 kB | 115/843 kBProgress (3): 212/434 kB | 119/237 kB | 115/843 kBProgress (3): 217/434 kB | 119/237 kB | 115/843 kBProgress (3): 221/434 kB | 119/237 kB | 115/843 kBProgress (3): 221/434 kB | 123/237 kB | 115/843 kBProgress (3): 229/434 kB | 123/237 kB | 115/843 kBProgress (3): 237/434 kB | 123/237 kB | 115/843 kBProgress (3): 254/434 kB | 123/237 kB | 115/843 kBProgress (3): 270/434 kB | 123/237 kB | 115/843 kBProgress (3): 270/434 kB | 127/237 kB | 115/843 kBProgress (3): 270/434 kB | 131/237 kB | 115/843 kBProgress (3): 286/434 kB | 131/237 kB | 115/843 kBProgress (3): 286/434 kB | 136/237 kB | 115/843 kBProgress (3): 286/434 kB | 140/237 kB | 115/843 kBProgress (3): 286/434 kB | 144/237 kB | 115/843 kBProgress (3): 303/434 kB | 144/237 kB | 115/843 kBProgress (3): 303/434 kB | 144/237 kB | 119/843 kBProgress (3): 303/434 kB | 144/237 kB | 123/843 kBProgress (3): 303/434 kB | 144/237 kB | 127/843 kBProgress (3): 303/434 kB | 148/237 kB | 127/843 kBProgress (3): 303/434 kB | 152/237 kB | 127/843 kBProgress (3): 303/434 kB | 152/237 kB | 131/843 kBProgress (3): 319/434 kB | 152/237 kB | 131/843 kBProgress (3): 319/434 kB | 157/237 kB | 131/843 kBProgress (3): 319/434 kB | 157/237 kB | 136/843 kBProgress (3): 319/434 kB | 161/237 kB | 136/843 kBProgress (3): 319/434 kB | 161/237 kB | 140/843 kBProgress (3): 336/434 kB | 161/237 kB | 140/843 kBProgress (3): 336/434 kB | 165/237 kB | 140/843 kBProgress (3): 336/434 kB | 165/237 kB | 144/843 kBProgress (3): 336/434 kB | 169/237 kB | 144/843 kBProgress (3): 336/434 kB | 169/237 kB | 148/843 kBProgress (3): 336/434 kB | 174/237 kB | 148/843 kBProgress (3): 352/434 kB | 174/237 kB | 148/843 kBProgress (3): 352/434 kB | 174/237 kB | 153/843 kBProgress (3): 352/434 kB | 178/237 kB | 153/843 kBProgress (3): 352/434 kB | 178/237 kB | 157/843 kBProgress (3): 360/434 kB | 178/237 kB | 157/843 kBProgress (3): 360/434 kB | 182/237 kB | 157/843 kBProgress (3): 360/434 kB | 182/237 kB | 161/843 kBProgress (3): 360/434 kB | 182/237 kB | 163/843 kBProgress (3): 360/434 kB | 186/237 kB | 163/843 kBProgress (3): 360/434 kB | 191/237 kB | 163/843 kBProgress (3): 360/434 kB | 191/237 kB | 167/843 kBProgress (3): 377/434 kB | 191/237 kB | 167/843 kBProgress (3): 377/434 kB | 195/237 kB | 167/843 kBProgress (3): 377/434 kB | 195/237 kB | 172/843 kBProgress (3): 377/434 kB | 195/237 kB | 176/843 kBProgress (3): 377/434 kB | 195/237 kB | 180/843 kBProgress (3): 393/434 kB | 195/237 kB | 180/843 kBProgress (3): 393/434 kB | 199/237 kB | 180/843 kBProgress (3): 393/434 kB | 203/237 kB | 180/843 kBProgress (3): 393/434 kB | 207/237 kB | 180/843 kBProgress (3): 393/434 kB | 207/237 kB | 184/843 kBProgress (3): 393/434 kB | 212/237 kB | 184/843 kBProgress (3): 393/434 kB | 212/237 kB | 188/843 kBProgress (3): 393/434 kB | 216/237 kB | 188/843 kBProgress (3): 410/434 kB | 216/237 kB | 188/843 kBProgress (3): 410/434 kB | 216/237 kB | 193/843 kBProgress (3): 410/434 kB | 220/237 kB | 193/843 kBProgress (3): 410/434 kB | 220/237 kB | 197/843 kBProgress (3): 426/434 kB | 220/237 kB | 197/843 kBProgress (3): 426/434 kB | 224/237 kB | 197/843 kBProgress (3): 426/434 kB | 224/237 kB | 201/843 kBProgress (3): 434 kB | 224/237 kB | 201/843 kB    Progress (3): 434 kB | 224/237 kB | 205/843 kB                                              Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-loader-tools/3.2.4/spring-boot-loader-tools-3.2.4.jar (434 kB at 722 kB/s)
+Progress (2): 224/237 kB | 210/843 kBProgress (2): 224/237 kB | 214/843 kBProgress (2): 237 kB | 214/843 kB                                     Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.2.4/httpcore5-h2-5.2.4.jar (237 kB at 391 kB/s)
+Progress (1): 218/843 kBProgress (1): 222/843 kBProgress (1): 239/843 kBProgress (1): 255/843 kBProgress (1): 271/843 kBProgress (1): 288/843 kBProgress (1): 294/843 kBProgress (1): 311/843 kBProgress (1): 327/843 kBProgress (1): 343/843 kBProgress (1): 360/843 kBProgress (1): 376/843 kBProgress (1): 392/843 kBProgress (1): 409/843 kBProgress (1): 425/843 kBProgress (1): 442/843 kBProgress (1): 458/843 kBProgress (1): 474/843 kBProgress (1): 491/843 kBProgress (1): 507/843 kBProgress (1): 524/843 kBProgress (1): 540/843 kBProgress (1): 556/843 kBProgress (1): 573/843 kBProgress (1): 589/843 kBProgress (1): 605/843 kBProgress (1): 622/843 kBProgress (1): 638/843 kBProgress (1): 655/843 kBProgress (1): 671/843 kBProgress (1): 687/843 kBProgress (1): 704/843 kBProgress (1): 720/843 kBProgress (1): 737/843 kBProgress (1): 753/843 kBProgress (1): 769/843 kBProgress (1): 786/843 kBProgress (1): 802/843 kBProgress (1): 818/843 kBProgress (1): 835/843 kBProgress (1): 843 kB                        Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/httpcomponents/client5/httpclient5/5.2.3/httpclient5-5.2.3.jar (843 kB at 1.0 MB/s)
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.4)
+
+2026-04-06T02:35:21.794+05:30  INFO 74991 --- [telecom-producer] [           main] c.t.p.producer.ProducerApplication       : Starting ProducerApplication using Java 25.0.2 with PID 74991 (/Users/hateful/ADBMS-project/services/producer/target/classes started by hateful in /Users/hateful/ADBMS-project/services/producer)
+2026-04-06T02:35:21.795+05:30  INFO 74991 --- [telecom-producer] [           main] c.t.p.producer.ProducerApplication       : No active profile set, falling back to 1 default profile: "default"
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/hateful/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.19/tomcat-embed-core-10.1.19.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+2026-04-06T02:35:22.086+05:30  INFO 74991 --- [telecom-producer] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-04-06T02:35:22.091+05:30  INFO 74991 --- [telecom-producer] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-06T02:35:22.091+05:30  INFO 74991 --- [telecom-producer] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2026-04-06T02:35:22.135+05:30  INFO 74991 --- [telecom-producer] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-04-06T02:35:22.135+05:30  INFO 74991 --- [telecom-producer] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 322 ms
+2026-04-06T02:35:22.299+05:30  INFO 74991 --- [telecom-producer] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-04-06T02:35:22.302+05:30  INFO 74991 --- [telecom-producer] [           main] c.t.p.producer.ProducerApplication       : Started ProducerApplication in 0.62 seconds (process running for 0.714)
+2026-04-06T02:35:37.513+05:30  INFO 74991 --- [telecom-producer] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-06T02:35:37.514+05:30  INFO 74991 --- [telecom-producer] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-06T02:35:37.514+05:30  INFO 74991 --- [telecom-producer] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-04-06T02:35:37.549+05:30  INFO 74991 --- [telecom-producer] [nio-8080-exec-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-04-06T02:35:37.581+05:30  INFO 74991 --- [telecom-producer] [nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2026-04-06T02:35:37.593+05:30  INFO 74991 --- [telecom-producer] [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.6.1
+2026-04-06T02:35:37.594+05:30  INFO 74991 --- [telecom-producer] [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e3c2b738d253ff5
+2026-04-06T02:35:37.594+05:30  INFO 74991 --- [telecom-producer] [nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1775423137592
+2026-04-06T02:35:37.672+05:30  INFO 74991 --- [telecom-producer] [ad | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: PyaJ7j3eTSaOA6n3eNb6TA
+2026-04-06T02:35:37.785+05:30  INFO 74991 --- [telecom-producer] [ad | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 1000 with epoch 0
+2026-04-06T02:44:37.691+05:30  INFO 74991 --- [telecom-producer] [ad | producer-1] org.apache.kafka.clients.NetworkClient   : [Producer clientId=producer-1] Node -1 disconnected.

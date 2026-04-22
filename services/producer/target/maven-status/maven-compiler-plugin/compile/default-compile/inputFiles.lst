@@ -1,0 +1,4 @@
+/Users/hateful/ADBMS-project/services/producer/src/main/java/com/telecom/pipeline/producer/ProducerApplication.java
+/Users/hateful/ADBMS-project/services/producer/src/main/java/com/telecom/pipeline/producer/model/CdrEvent.java
+/Users/hateful/ADBMS-project/services/producer/src/main/java/com/telecom/pipeline/producer/controller/SimulatorController.java
+/Users/hateful/ADBMS-project/services/producer/src/main/java/com/telecom/pipeline/producer/service/KafkaProducerService.java
