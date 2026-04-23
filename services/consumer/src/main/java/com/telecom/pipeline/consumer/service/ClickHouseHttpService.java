@@ -71,4 +71,35 @@ public class ClickHouseHttpService {
             return Collections.emptyList();
         }
     }
+
+    /**
+     * Executes a DDL/DML statement (INSERT, TRUNCATE, CREATE) that doesn't return rows.
+     */
+    public boolean execute(String sql) {
+        try {
+            URL url = new URL(CH_URL + "?user=" + CH_USER +
+                    "&password=" + CH_PASS +
+                    "&database=" + CH_DB);
+
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setDoOutput(true);
+            conn.setConnectTimeout(5000);
+            conn.setReadTimeout(60000); // ETL can take a while
+
+            try (OutputStream os = conn.getOutputStream()) {
+                os.write(sql.getBytes(StandardCharsets.UTF_8));
+            }
+
+            if (conn.getResponseCode() != 200) {
+                String error = new String(conn.getErrorStream().readAllBytes());
+                System.err.println("ClickHouse execute error: " + error);
+                return false;
+            }
+            return true;
+        } catch (Exception e) {
+            System.err.println("ClickHouse execute failed: " + e.getMessage());
+            return false;
+        }
+    }
 }

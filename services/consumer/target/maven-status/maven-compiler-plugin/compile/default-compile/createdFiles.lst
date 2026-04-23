@@ -5,7 +5,9 @@ com/telecom/pipeline/consumer/repository/CdrRepository$RevenueByCircleProjection
 com/telecom/pipeline/consumer/ConsumerApplication.class
 com/telecom/pipeline/consumer/repository/CdrRepository$TopCallerProjection.class
 com/telecom/pipeline/consumer/repository/CdrRepository.class
+com/telecom/pipeline/consumer/service/OlapEtlService.class
 com/telecom/pipeline/consumer/repository/CdrRepository$TrafficByTimeProjection.class
+com/telecom/pipeline/consumer/service/ClickHouseHttpService.class
 com/telecom/pipeline/consumer/repository/FraudDetectionRepository.class
 com/telecom/pipeline/consumer/model/Cdr.class
 com/telecom/pipeline/consumer/service/FraudDetectionService.class

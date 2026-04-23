@@ -38,11 +38,12 @@ public class OlapController {
     @GetMapping("/hourly-trend")
     public List<Map<String, Object>> getHourlyTrend() {
         return clickHouse.query(
-            "SELECT (time_id / 100) as hour, " +
+            "SELECT time_id as time, " +
             "count() as call_count, " +
             "sum(cost) as total_revenue " +
             "FROM dwh.fact_cdrs " +
-            "GROUP BY hour ORDER BY hour ASC"
+            "WHERE date_id = toUInt32(toYYYYMMDD(now())) " +
+            "GROUP BY time ORDER BY time ASC"
         );
     }
 
@@ -53,18 +54,33 @@ public class OlapController {
             "count() as calls, " +
             "sum(cost) as revenue " +
             "FROM dwh.fact_cdrs " +
+            "WHERE date_id = toUInt32(toYYYYMMDD(now())) " +
             "GROUP BY region ORDER BY calls DESC LIMIT 10"
         );
     }
 
-    @GetMapping("/call-type-analytics")
-    public List<Map<String, Object>> getCallTypeAnalytics() {
+    @GetMapping("/call-status-analytics")
+    public List<Map<String, Object>> getCallStatusAnalytics() {
         return clickHouse.query(
-            "SELECT call_type, " +
-            "count() as total_calls, " +
-            "avg(duration_seconds) as avg_duration " +
+            "SELECT call_status, " +
+            "count() as total_calls " +
             "FROM dwh.fact_cdrs " +
-            "GROUP BY call_type"
+            "WHERE date_id = toUInt32(toYYYYMMDD(now())) " +
+            "GROUP BY call_status"
+        );
+    }
+
+    @GetMapping("/high-value-callers")
+    public List<Map<String, Object>> getHighValueCallers() {
+        return clickHouse.query(
+            "SELECT s.phone_number, " +
+            "count() as total_calls, " +
+            "sum(cost) as total_spent " +
+            "FROM dwh.fact_cdrs f " +
+            "JOIN dwh.dim_subscriber s ON f.caller_id = s.subscriber_id " +
+            "WHERE f.date_id = toUInt32(toYYYYMMDD(now())) " +
+            "GROUP BY s.phone_number " +
+            "ORDER BY total_spent DESC LIMIT 5"
         );
     }
 }
